@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { StyleSheet, View, StatusBar } from "react-native";
 import React from "react";
 import TextM from "../fonts/TextMedium";
 import TextB from "../fonts/TextBold";
@@ -14,13 +14,11 @@ import image6 from "../assets/package.jpg";
 const Services = () => {
   return (
     <View style={styles.container}>
-      <View style={{ marginLeft: 15 }}>
-        <TextB style={{ fontSize: 40 }}>Services</TextB>
-      </View>
+      <TextB style={{ fontSize: 35, marginLeft: 15 }}>Services</TextB>
 
-      <View style={{ marginTop: 30, marginLeft: 15 }}>
-        <TextB style={{ fontSize: 20 }}>Go anywhere, get anything</TextB>
-      </View>
+      <TextB style={{ fontSize: 20, marginLeft: 15, marginTop: 30 }}>
+        Go anywhere, get anything
+      </TextB>
 
       <View style={styles.container2}>
         <PromoBoxL hasBox={true} name="Ride" imageSource={car} />
