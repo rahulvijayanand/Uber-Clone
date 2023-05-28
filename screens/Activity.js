@@ -4,17 +4,19 @@ import {
   StatusBar,
   TouchableOpacity,
   Image,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import TextM from "../fonts/TextMedium";
 import TextB from "../fonts/TextBold";
 import Text from "../fonts/Text";
 import Show from "../components/Bottom";
-import { Divider } from "react-native-paper";
+import RideItem from "../components/ActivityComp";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Activity = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <TextB style={{ fontSize: 35, marginLeft: 15 }}>Activity</TextB>
 
       <TextB style={{ fontSize: 20, marginLeft: 15, marginTop: 30 }}>
@@ -149,7 +151,67 @@ const Activity = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-    </View>
+
+      <RideItem
+        place="Balarama Apartments"
+        date="Dec 24"
+        timing="8:47 PM"
+        cost="₹151.00"
+      />
+      <RideItem
+        place="6/1"
+        date="Dec 24"
+        timing="8:34 PM"
+        cost="₹0.00 • Unfulfilled"
+      />
+      <RideItem
+        place="BSNL Telephone Exchange"
+        date="Sep 7"
+        timing="2:37 PM"
+        cost="₹94.00"
+      />
+      <RideItem
+        place="524, Poonamallee High Road"
+        date="Sep 6"
+        timing="11:22 AM"
+        cost="₹90.00"
+      />
+      <RideItem
+        place="7th Street"
+        date="Sep 6"
+        timing="11:44 AM"
+        cost="₹141.00"
+      />
+
+      <TouchableOpacity
+        activeOpacity={0.5}
+        style={{
+          marginTop: 10,
+          marginLeft: 10,
+          marginRight: 25,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <View style={{ flexDirection: "row" }}>
+          <MaterialCommunityIcons
+            name="clock-time-three"
+            size={35}
+            color="black"
+            style={{ marginLeft: 10, alignSelf: "center" }}
+          />
+          <TextM style={{ alignSelf: "center", fontSize: 17, marginLeft: 20 }}>
+            View older activity
+          </TextM>
+        </View>
+
+        <View style={styles.rightContainer}>
+          <Text style={styles.arrowText}>❯</Text>
+        </View>
+      </TouchableOpacity>
+
+      <View style={{ marginBottom: 50 }} />
+    </ScrollView>
   );
 };
 
@@ -160,5 +222,12 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "#fff",
     paddingTop: StatusBar.currentHeight + 20,
+  },
+  rightContainer: {
+    justifyContent: "center",
+  },
+  arrowText: {
+    color: "#989898",
+    fontSize: 20,
   },
 });
