@@ -1,4 +1,10 @@
-import { StyleSheet, View, StatusBar, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  StatusBar,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import TextM from "../fonts/TextMedium";
 import SearchBar from "../components/Search";
@@ -6,19 +12,40 @@ import Address from "../components/Address";
 import { Divider } from "react-native-paper";
 import TextB from "../fonts/TextBold";
 import PromoBox from "../components/Grid";
+import Display from "../components/Display";
 import car from "../assets/car.jpg";
 import image2 from "../assets/suitcase.jpg";
 import image3 from "../assets/rental.jpg";
 import image4 from "../assets/calendar.jpg";
+import image5 from "../assets/3.jpg";
+import image6 from "../assets/4.jpg";
+import image7 from "../assets/5.jpeg";
+import image8 from "../assets/6.jpeg";
+import image9 from "../assets/7.jpeg";
+import image10 from "../assets/8.jpeg";
+import image11 from "../assets/9.jpg";
+import image12 from "../assets/10.jpeg";
+import Carousel from "../components/Carousel";
 
 const Home = ({ navigation }) => {
+  const images = [
+    require("../assets/c1.jpg"),
+    require("../assets/c2.jpg"),
+    require("../assets/c3.jpg"),
+    require("../assets/c4.jpg"),
+    require("../assets/c5.jpg"),
+    require("../assets/c6.jpg"),
+    require("../assets/c7.jpg"),
+    require("../assets/c8.jpg"),
+    require("../assets/c9.jpg"),
+  ];
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <View style={{ alignItems: "center" }}>
         <SearchBar />
       </View>
 
-      <View style={{ marginTop: 25 }}>
+      <View style={{ paddingTop: 25 }}>
         <Address
           name="Decathlon Connect - Express Avenue"
           address="S - 103, First Floor Express Avenue Mall, Whites Rd, Royapettah, Chennai, Tamil Nadu 600014"
@@ -34,7 +61,7 @@ const Home = ({ navigation }) => {
         }}
       />
 
-      <View style={{ marginTop: 25 }}>
+      <View style={{ paddingTop: 25 }}>
         <Address
           name="VR Chennai"
           address="100 Feet Rd, Thirumangalam, Anna Nagar, Chennai, Tamil Nadu 600040"
@@ -44,15 +71,15 @@ const Home = ({ navigation }) => {
       <View
         style={{
           flexDirection: "row",
-          marginTop: 35,
-          marginLeft: 15,
+          paddingTop: 35,
+          paddingLeft: 15,
           justifyContent: "space-between",
         }}
       >
         <TextB style={{ fontSize: 20, alignSelf: "center" }}>Suggestions</TextB>
         <TouchableOpacity
           onPress={() => navigation.navigate("SS")}
-          style={{ alignSelf: "center", marginRight: 20 }}
+          style={{ alignSelf: "center", paddingRight: 20 }}
         >
           <TextM style={{ fontSize: 15 }}>See All</TextM>
         </TouchableOpacity>
@@ -64,7 +91,89 @@ const Home = ({ navigation }) => {
         <PromoBox hasBox={true} name="Rentals" imageSource={image3} />
         <PromoBox hasBox={false} name="Reserve" imageSource={image4} />
       </View>
-    </View>
+
+      <View style={{ paddingTop: 20 }}>
+        <TextB style={{ fontSize: 20, marginLeft: 15 }}>
+          Ways to save with Uber
+        </TextB>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={{ paddingTop: 10, paddingLeft: 15 }}
+        >
+          <Display
+            image={image5}
+            title="Uber Moto rides"
+            desc="Affordable motorcycle pickups"
+          />
+          <Display
+            image={image6}
+            title="Auto rides"
+            desc="Upfront fares, doorstep pickups"
+          />
+        </ScrollView>
+      </View>
+
+      <View style={{ margin: 15, marginBottom: 10, marginTop: 30 }}>
+        <Carousel images={images} />
+      </View>
+
+      <View style={{ paddingTop: 25 }}>
+        <TextB style={{ fontSize: 20, marginLeft: 15 }}>
+          Ways to plan with Uber
+        </TextB>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={{ paddingTop: 10, paddingLeft: 15 }}
+        >
+          <Display
+            image={image9}
+            title="Rentals"
+            desc="Ride from 1 to 12 hours"
+          />
+          <Display
+            image={image7}
+            title="Reserve a ride"
+            desc="Rush less at pickup"
+          />
+          <Display
+            image={image10}
+            title="For XL groups"
+            desc="Comfortable rides for your group"
+          />
+          <Display
+            image={image8}
+            title="Travel Intercity"
+            desc="Go outstation with ease"
+          />
+        </ScrollView>
+      </View>
+
+      <View style={{ paddingTop: 25 }}>
+        <TextB style={{ fontSize: 20, marginLeft: 15 }}>
+          More ways to use Uber
+        </TextB>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={{ paddingTop: 10, paddingLeft: 15 }}
+        >
+          <Display
+            image={image11}
+            title="Send a package"
+            desc="On-demand delivery across town"
+          />
+          <Display
+            image={image12}
+            title="Safety Toolkit"
+            desc="On-trip help with safety issues"
+          />
+        </ScrollView>
+      </View>
+
+      <View style={{ paddingBottom: 75 }} />
+    </ScrollView>
   );
 };
 
@@ -81,6 +190,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 15,
     width: "100%",
-    marginTop: 20,
+    paddingTop: 20,
   },
 });

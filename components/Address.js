@@ -5,24 +5,24 @@ import TextM from "../fonts/TextMedium";
 
 const Address = ({ name, address }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <View style={styles.leftContainer}>
         <View style={styles.iconContainer}>
           <MaterialIcons name="location-on" size={24} color="black" />
         </View>
       </View>
-      <TouchableOpacity style={styles.middleContainer}>
+      <View style={styles.middleContainer}>
         <TextM numberOfLines={1} style={styles.nameText}>
           {name}
         </TextM>
         <TextM numberOfLines={1} style={styles.addressText}>
           {address}
         </TextM>
-      </TouchableOpacity>
+      </View>
       <View style={styles.rightContainer}>
         <Text style={styles.arrowText}>❯</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   nameText: {
     fontSize: 12,
     color: "#333333",
-    marginTop: 5,
+    marginTop: 10,
     textAlign: "center",
   },
 });
