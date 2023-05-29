@@ -163,6 +163,8 @@ const Home = ({ navigation }) => {
             image={image11}
             title="Send a package"
             desc="On-demand delivery across town"
+            screen="Package"
+            navigation={navigation}
           />
           <Display
             image={image12}

@@ -3,10 +3,14 @@ import { View, TouchableOpacity, Image } from "react-native";
 import Text from "../fonts/Text";
 import TextM from "../fonts/TextMedium";
 
-const Display = ({ navigation, title, image, desc }) => {
+const Display = ({ screen, title, image, desc, navigation }) => {
+  const handlePress = () => {
+    navigation.navigate(screen);
+  };
+
   return (
     <View style={{ paddingRight: 20 }}>
-      <TouchableOpacity activeOpacity={0.5}>
+      <TouchableOpacity activeOpacity={0.5} onPress={handlePress}>
         <Image
           source={image}
           style={{ width: 220, height: 120, borderRadius: 10 }}

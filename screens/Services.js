@@ -10,8 +10,30 @@ import image3 from "../assets/rental.jpg";
 import image4 from "../assets/calendar.jpg";
 import image5 from "../assets/intercity.jpg";
 import image6 from "../assets/package.jpg";
+import Carousel from "../components/PackageCarousel";
 
 const Services = () => {
+  const images = [
+    require("../assets/u1.jpg"),
+    require("../assets/u2.jpg"),
+    require("../assets/u3.jpg"),
+    require("../assets/u4.jpg"),
+  ];
+
+  const titles = [
+    "Leave something behind?",
+    "Move supplies across town",
+    "Surprise them with a gift",
+    "Delight your customers",
+  ];
+  const descriptions = [
+    "Get your keys or glasses back without a second trip.",
+    "From printer ink to auto parts, get it delivered.",
+    "Drop off some flowers or gifts to your loved ones.",
+    "Level up your business with same-day delivery.",
+  ];
+  const staticText = "Get Started ➜";
+
   return (
     <View style={styles.container}>
       <TextB style={{ fontSize: 35, marginLeft: 15 }}>Services</TextB>
@@ -31,6 +53,7 @@ const Services = () => {
         <PromoBox hasBox={false} name="Package" imageSource={image6} />
         <PromoBox hasBox={false} name="Reserve" imageSource={image4} />
       </View>
+
     </View>
   );
 };
