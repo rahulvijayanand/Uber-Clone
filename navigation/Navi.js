@@ -18,7 +18,6 @@ const Tab = createBottomTabNavigator();
 const Navigation = () => {
   return (
     <Tab.Navigator
-      initialRouteName="FirstScreenNavigator"
       screenOptions={{
         tabBarActiveTintColor: "black",
         headerShown: false,
