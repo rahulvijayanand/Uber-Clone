@@ -4,8 +4,9 @@ import Carousel from "../components/PackageCarousel";
 import Text from "../fonts/Text";
 import TextM from "../fonts/TextMedium";
 import TextB from "../fonts/TextBold";
+import { Ionicons } from "@expo/vector-icons";
 
-const Package = () => {
+const Package = ({ navigation }) => {
   const images = [
     require("../assets/u1.jpg"),
     require("../assets/u2.jpg"),
@@ -28,10 +29,15 @@ const Package = () => {
   const staticText = "Get Started ➜";
   return (
     <View style={styles.container}>
-      <View style={{ flexDirection: "row", justifyContent: "center" }}>
-        <TextB style={{ fontSize: 20, alignSelf: "center" }}>
-          Package Delivery
-        </TextB>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
+      <View style={styles.headerContainer}>
+        <TouchableOpacity
+          style={styles.backButton}
+          onPress={() => navigation.goBack()}
+        >
+          <Ionicons name="arrow-back" size={30} color="#000" />
+        </TouchableOpacity>
+        <TextB style={styles.headerText}>Package Delivery</TextB>
       </View>
       <View style={{ marginLeft: 15, marginRight: 15, marginTop: 25 }}>
         <Carousel
@@ -41,20 +47,14 @@ const Package = () => {
           staticText={staticText}
         />
       </View>
-      <View>
-        <TouchableOpacity
-          activeOpacity={0.5}
-          style={{
-            backgroundColor: "#000",
-            alignItems: "center",
-            justifyContent: "center",
-            paddingVertical: 15,
-            margin: 15,
-            borderRadius: 7.5,
-            marginTop: 30,
-          }}
-        >
-          <TextM style={{ color: "#fff", fontSize: 18 }}>Send a package</TextM>
+      <View style={styles.bottomButtonsContainer}>
+        <TouchableOpacity activeOpacity={0.5} style={styles.sendButton}>
+          <TextM style={styles.buttonText}>Send a package</TextM>
+        </TouchableOpacity>
+        <TouchableOpacity activeOpacity={0.5} style={styles.receiveButton}>
+          <TextM style={[styles.buttonText, { color: "#000" }]}>
+            Receive a package
+          </TextM>
         </TouchableOpacity>
       </View>
     </View>
@@ -65,7 +65,47 @@ export default Package;
 
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
-    paddingTop: StatusBar.currentHeight + 20,
+    flex: 1,
+    paddingTop: 10,
+    backgroundColor: "white",
+  },
+  headerContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  backButton: {
+    position: "absolute",
+    left: 15,
+  },
+  headerText: {
+    fontSize: 20,
+  },
+  bottomButtonsContainer: {
+    position: "absolute",
+    bottom: 20,
+    left: 0,
+    right: 0,
+  },
+  sendButton: {
+    backgroundColor: "#000",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 15,
+    marginHorizontal: 15,
+    borderRadius: 7.5,
+    marginBottom: 10,
+  },
+  receiveButton: {
+    backgroundColor: "#eee",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 15,
+    marginHorizontal: 15,
+    borderRadius: 7.5,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 18,
   },
 });

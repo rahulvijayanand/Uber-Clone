@@ -41,6 +41,7 @@ const Home = ({ navigation }) => {
   ];
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <View style={{ alignItems: "center" }}>
         <SearchBar />
       </View>
@@ -120,38 +121,6 @@ const Home = ({ navigation }) => {
 
       <View style={{ paddingTop: 25 }}>
         <TextB style={{ fontSize: 20, marginLeft: 15 }}>
-          Ways to plan with Uber
-        </TextB>
-        <ScrollView
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          style={{ paddingTop: 10, paddingLeft: 15 }}
-        >
-          <Display
-            image={image9}
-            title="Rentals"
-            desc="Ride from 1 to 12 hours"
-          />
-          <Display
-            image={image7}
-            title="Reserve a ride"
-            desc="Rush less at pickup"
-          />
-          <Display
-            image={image10}
-            title="For XL groups"
-            desc="Comfortable rides for your group"
-          />
-          <Display
-            image={image8}
-            title="Travel Intercity"
-            desc="Go outstation with ease"
-          />
-        </ScrollView>
-      </View>
-
-      <View style={{ paddingTop: 25 }}>
-        <TextB style={{ fontSize: 20, marginLeft: 15 }}>
           More ways to use Uber
         </TextB>
         <ScrollView
@@ -174,7 +143,41 @@ const Home = ({ navigation }) => {
         </ScrollView>
       </View>
 
-      <View style={{ paddingBottom: 75 }} />
+      <View style={{ paddingTop: 25 }}>
+        <TextB style={{ fontSize: 20, marginLeft: 15 }}>
+          Ways to plan with Uber
+        </TextB>
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={{ paddingTop: 10, paddingLeft: 15 }}
+        >
+          <Display
+            image={image7}
+            title="Reserve and relax"
+            desc="Book up to 90 days ahead"
+            screen="Reserve"
+            navigation={navigation}
+          />
+          <Display
+            image={image9}
+            title="Rentals"
+            desc="Ride from 1 to 12 hours"
+          />
+          <Display
+            image={image10}
+            title="For XL groups"
+            desc="Comfortable rides for your group"
+          />
+          <Display
+            image={image8}
+            title="Travel Intercity"
+            desc="Go outstation with ease"
+          />
+        </ScrollView>
+      </View>
+
+      <View style={{ paddingBottom: 40 }} />
     </ScrollView>
   );
 };
@@ -185,7 +188,7 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
     backgroundColor: "#fff",
-    paddingTop: StatusBar.currentHeight + 20,
+    paddingTop: 20,
   },
   container2: {
     flexDirection: "row",

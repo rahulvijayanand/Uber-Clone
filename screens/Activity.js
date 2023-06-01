@@ -17,6 +17,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 const Activity = ({ navigation }) => {
   return (
     <ScrollView style={styles.container}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <TextB style={{ fontSize: 35, marginLeft: 15 }}>Activity</TextB>
 
       <TextB style={{ fontSize: 20, marginLeft: 15, marginTop: 30 }}>
@@ -221,7 +222,7 @@ const styles = StyleSheet.create({
   container: {
     height: "100%",
     backgroundColor: "#fff",
-    paddingTop: StatusBar.currentHeight + 20,
+    paddingTop: 10,
   },
   rightContainer: {
     justifyContent: "center",

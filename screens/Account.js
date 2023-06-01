@@ -1,12 +1,12 @@
 import React from "react";
 import {
   StyleSheet,
-  Text,
   View,
   TouchableOpacity,
   ScrollView,
   Image,
   SafeAreaView,
+  StatusBar,
 } from "react-native";
 import { Icon } from "@rneui/themed";
 import { Divider } from "react-native-paper";
@@ -26,6 +26,7 @@ const Account = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <View style={styles.header}>
         <TextB style={styles.name}>Rahul Vijayanand</TextB>
         <View style={styles.profileImageContainer}>
@@ -96,12 +97,12 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 35,
-    paddingTop: 50,
+    paddingTop: 10,
     marginLeft: 5,
     width: 250,
   },
   profileImageContainer: {
-    paddingTop: 70,
+    paddingTop: 30,
     paddingLeft: 25,
   },
   profileImage: {
