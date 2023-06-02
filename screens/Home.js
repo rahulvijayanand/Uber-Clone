@@ -106,11 +106,15 @@ const Home = ({ navigation }) => {
             image={image5}
             title="Uber Moto rides"
             desc="Affordable motorcycle pickups"
+            screen="Moto"
+            navigation={navigation}
           />
           <Display
             image={image6}
             title="Auto rides"
             desc="Upfront fares, doorstep pickups"
+            screen="Auto"
+            navigation={navigation}
           />
         </ScrollView>
       </View>
@@ -139,6 +143,8 @@ const Home = ({ navigation }) => {
             image={image12}
             title="Safety Toolkit"
             desc="On-trip help with safety issues"
+            screen="Safety"
+            navigation={navigation}
           />
         </ScrollView>
       </View>
@@ -168,6 +174,8 @@ const Home = ({ navigation }) => {
             image={image10}
             title="For XL groups"
             desc="Comfortable rides for your group"
+            screen="UberXL"
+            navigation={navigation}
           />
           <Display
             image={image8}
