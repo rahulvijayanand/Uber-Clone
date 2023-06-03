@@ -16,7 +16,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Activity = ({ navigation }) => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <TextB style={{ fontSize: 35, marginLeft: 15 }}>Activity</TextB>
 
@@ -211,7 +211,7 @@ const Activity = ({ navigation }) => {
         </View>
       </TouchableOpacity>
 
-      <View style={{ marginBottom: 50 }} />
+      <View style={{ marginBottom: 20 }} />
     </ScrollView>
   );
 };

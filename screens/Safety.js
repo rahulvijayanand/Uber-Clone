@@ -16,10 +16,10 @@ import { Ionicons } from "@expo/vector-icons";
 
 const Safety = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor={"#000"} barStyle={"light-content"} />
+    <View>
+      <ScrollView style={styles.container}>
+        <StatusBar backgroundColor={"#000"} barStyle={"light-content"} />
 
-      <ScrollView showsHorizontalScrollIndicator={false}>
         <Image source={require("../assets/10.jpeg")} style={styles.image} />
 
         <View style={styles.container2}>
@@ -37,6 +37,7 @@ const Safety = ({ navigation }) => {
             to share your trip information with them in real time.
           </Text>
         </View>
+        
       </ScrollView>
 
       <View style={styles.bottomButtonsContainer}>

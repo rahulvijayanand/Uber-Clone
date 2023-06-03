@@ -26,8 +26,10 @@ import image10 from "../assets/8.jpeg";
 import image11 from "../assets/9.jpg";
 import image12 from "../assets/10.jpeg";
 import Carousel from "../components/Carousel";
+import * as NavigationBar from 'expo-navigation-bar';
 
 const Home = ({ navigation }) => {
+  NavigationBar.setBackgroundColorAsync("#f6f6f6");
   const images = [
     require("../assets/c1.jpg"),
     require("../assets/c2.jpg"),
@@ -42,6 +44,7 @@ const Home = ({ navigation }) => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
+      
       <View style={{ alignItems: "center" }}>
         <SearchBar />
       </View>
