@@ -128,6 +128,7 @@ const Schedule = ({ navigation }) => {
         mode="time"
         onConfirm={handleTimeChange}
         onCancel={() => setShowTimePicker(false)}
+        date={selectedDate}
       />
 
       <View style={{ marginLeft: 5, marginTop: 20 }}>

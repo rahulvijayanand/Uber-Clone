@@ -54,7 +54,7 @@ const Services = ({ navigation }) => {
           name="Reserve"
           imageSource={image4}
           navigation={navigation}
-          screen={null}
+          screen="Reserve"
         />
       </View>
     </View>

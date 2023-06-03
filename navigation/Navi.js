@@ -24,9 +24,9 @@ const Navigation = () => {
         tabBarLabelStyle: {
           fontFamily: "UberMedium",
           fontSize: 12,
-          bottom: 7.5,
+          bottom: 10,
         },
-        tabBarStyle: [{ height: 55 }, null],
+        tabBarStyle: [{ height: 60 }, null],
       }}
     >
       <Tab.Screen

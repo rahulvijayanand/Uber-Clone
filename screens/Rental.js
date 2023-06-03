@@ -76,12 +76,12 @@ const Rental = ({ navigation }) => {
         <View
           style={{
             justifyContent: "space-between",
-            marginBottom: 20,
+            marginBottom: 25,
             marginLeft: 15,
           }}
         >
           <View>
-            <TextM style={{ fontSize: 18, marginTop: 10 }}>Starting at</TextM>
+            <TextM style={{ fontSize: 20, marginTop: 10 }}>Starting at</TextM>
           </View>
 
           <View style={{ position: "absolute", right: 15 }}>
@@ -90,7 +90,7 @@ const Rental = ({ navigation }) => {
                 source={require("../assets/7-l.png")}
                 style={styles.sale}
               />
-              <TextM style={{ alignItems: "flex-end", fontSize: 16 }}>
+              <TextM style={{ alignItems: "flex-end", fontSize: 18 }}>
                 ₹346.63/hour
               </TextM>
             </View>
@@ -99,7 +99,7 @@ const Rental = ({ navigation }) => {
                 alignItems: "flex-end",
                 right: 0,
                 position: "absolute",
-                top: 25,
+                top: 30,
                 fontSize: 13,
                 textDecorationLine: "line-through",
                 color: "#747474",
