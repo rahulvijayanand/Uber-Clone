@@ -12,10 +12,10 @@ import image5 from "../assets/intercity.jpg";
 import image6 from "../assets/package.jpg";
 import Carousel from "../components/PackageCarousel";
 
-const Services = () => {
+const Services = ({ navigation }) => {
   return (
     <View style={styles.container}>
-    <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
+      <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
       <TextB style={{ fontSize: 35, marginLeft: 15 }}>Services</TextB>
 
       <TextB style={{ fontSize: 20, marginLeft: 15, marginTop: 30 }}>
@@ -28,12 +28,35 @@ const Services = () => {
       </View>
 
       <View style={[styles.container2, { marginTop: 5 }]}>
-        <PromoBox hasBox={true} name="Rentals" imageSource={image3} />
-        <PromoBox hasBox={false} name="Intercity" imageSource={image5} />
-        <PromoBox hasBox={false} name="Package" imageSource={image6} />
-        <PromoBox hasBox={false} name="Reserve" imageSource={image4} />
+        <PromoBox
+          hasBox={true}
+          name="Rentals"
+          imageSource={image3}
+          navigation={navigation}
+          screen="Rental"
+        />
+        <PromoBox
+          hasBox={false}
+          name="Intercity"
+          imageSource={image5}
+          navigation={navigation}
+          screen="Intercity"
+        />
+        <PromoBox
+          hasBox={false}
+          name="Package"
+          imageSource={image6}
+          navigation={navigation}
+          screen="Package"
+        />
+        <PromoBox
+          hasBox={false}
+          name="Reserve"
+          imageSource={image4}
+          navigation={navigation}
+          screen={null}
+        />
       </View>
-
     </View>
   );
 };

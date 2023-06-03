@@ -12,6 +12,7 @@ import UberXL from "../screens/UberXL";
 import Moto from "../screens/Moto";
 import Rental from "../screens/Rental";
 import Intercity from "../screens/Intercity";
+import Premier from "../screens/Premier";
 
 const Stack = createStackNavigator();
 
@@ -43,6 +44,11 @@ function MainNavi() {
       <Stack.Screen
         name="Moto"
         component={Moto}
+        options={{ ...TransitionPresets.ModalSlideFromBottomIOS }}
+      />
+      <Stack.Screen
+        name="Premier"
+        component={Premier}
         options={{ ...TransitionPresets.ModalSlideFromBottomIOS }}
       />
       <Stack.Screen name="Rental" component={Rental} />

@@ -2,9 +2,17 @@ import React from "react";
 import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import TextM from "../fonts/TextMedium";
 
-const PromoBoxL = ({ hasBox, name, imageSource }) => {
+const PromoBoxL = ({ hasBox, name, imageSource, screen, navigation }) => {
+  const handlePress = () => {
+    navigation.navigate(screen);
+  };
+
   return (
-    <TouchableOpacity activeOpacity={0.5} style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={0.5}
+      style={styles.container}
+      onPress={handlePress}
+    >
       {hasBox && (
         <View style={styles.box}>
           <TextM style={styles.promoText}>Promo</TextM>

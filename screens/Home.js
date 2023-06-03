@@ -25,6 +25,7 @@ import image9 from "../assets/7.jpeg";
 import image10 from "../assets/8.jpeg";
 import image11 from "../assets/9.jpg";
 import image12 from "../assets/10.jpeg";
+import image13 from "../assets/13.jpg";
 import Carousel from "../components/Carousel";
 import * as NavigationBar from "expo-navigation-bar";
 
@@ -48,21 +49,25 @@ const Home = ({ navigation }) => {
       name: "Ride",
       imageSource: car,
       hasBox: true,
+      screen: null,
     },
     {
       name: "Travel",
       imageSource: image2,
       hasBox: false,
+      screen: null,
     },
     {
       name: "Rentals",
       imageSource: image3,
       hasBox: true,
+      screen: "Rental",
     },
     {
       name: "Reserve",
       imageSource: image4,
       hasBox: false,
+      screen: "Reserve",
     },
   ];
 
@@ -93,6 +98,12 @@ const Home = ({ navigation }) => {
       title: "Safety Toolkit",
       desc: "On-trip help with safety issues",
       screen: "Safety",
+    },
+    {
+      image: image13,
+      title: "Premier rides",
+      desc: "Top-rated drivers, newer cars",
+      screen: "Premier",
     },
   ];
 
@@ -178,6 +189,8 @@ const Home = ({ navigation }) => {
             hasBox={item.hasBox}
             name={item.name}
             imageSource={item.imageSource}
+            navigation={navigation}
+            screen={item.screen}
           />
         ))}
       </View>

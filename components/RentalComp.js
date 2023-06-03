@@ -16,7 +16,7 @@ const RentalComponent = ({ imageSource, text }) => {
             }}
           />
         </View>
-        <TextM style={{ fontSize: 17, marginLeft: 25 }}>{text}</TextM>
+        <TextM style={{ fontSize: 17, marginLeft: 25, lineHeight:23 }}>{text}</TextM>
       </View>
     </View>
   );
