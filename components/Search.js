@@ -14,7 +14,7 @@ import {
 import TextB from "../fonts/TextBold";
 import TextM from "../fonts/TextMedium";
 
-const SearchBar = () => {
+const SearchBar = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.leftContainer}>
@@ -22,7 +22,10 @@ const SearchBar = () => {
         <TextB style={styles.searchText}>Where to?</TextB>
       </TouchableOpacity>
       <View style={styles.divider} />
-      <TouchableOpacity style={styles.rightContainer}>
+      <TouchableOpacity
+        style={styles.rightContainer}
+        onPress={() => navigation.navigate("Schedule")}
+      >
         <MaterialCommunityIcons
           name="clock-time-three"
           size={24}
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
   leftContainer: {
     flexDirection: "row",
     alignItems: "center",
-    width: "60%",
+    width: "61%",
   },
   searchIcon: {
     marginRight: 10,
@@ -74,13 +77,13 @@ const styles = StyleSheet.create({
   },
   rightContainer: {
     paddingVertical: 5,
-    width: "40%",
+    width: "37.5%",
     flexDirection: "row",
     backgroundColor: "#fff",
     borderRadius: 30,
   },
   nowText: {
-    fontSize: 17,
+    fontSize: 14,
     color: "#000",
     marginLeft: 10,
     alignSelf: "center",

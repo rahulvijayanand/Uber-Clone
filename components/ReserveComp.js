@@ -6,7 +6,7 @@ import { Divider } from "react-native-paper";
 const CustomComponent = ({ imageSource, text, showDivider }) => {
   return (
     <View>
-      <View style={{ marginTop: 15, flexDirection: "row", width: 300 }}>
+      <View style={{ marginTop: 15, flexDirection: "row", width: 310 }}>
         <View style={{ justifyContent: "center" }}>
           <Image
             source={imageSource}

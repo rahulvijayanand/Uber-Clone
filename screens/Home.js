@@ -139,7 +139,7 @@ const Home = ({ navigation }) => {
       <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
 
       <View style={{ alignItems: "center" }}>
-        <SearchBar />
+        <SearchBar navigation={navigation}/>
       </View>
 
       <View style={{ paddingTop: 25 }}>
