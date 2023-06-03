@@ -1,3 +1,4 @@
+import React from "react";
 import {
   StyleSheet,
   View,
@@ -5,7 +6,6 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import React from "react";
 import TextM from "../fonts/TextMedium";
 import SearchBar from "../components/Search";
 import Address from "../components/Address";
@@ -26,11 +26,12 @@ import image10 from "../assets/8.jpeg";
 import image11 from "../assets/9.jpg";
 import image12 from "../assets/10.jpeg";
 import Carousel from "../components/Carousel";
-import * as NavigationBar from 'expo-navigation-bar';
+import * as NavigationBar from "expo-navigation-bar";
 
 const Home = ({ navigation }) => {
   NavigationBar.setBackgroundColorAsync("#f6f6f6");
-  const images = [
+
+  const image = [
     require("../assets/c1.jpg"),
     require("../assets/c2.jpg"),
     require("../assets/c3.jpg"),
@@ -41,10 +42,91 @@ const Home = ({ navigation }) => {
     require("../assets/c8.jpg"),
     require("../assets/c9.jpg"),
   ];
+
+  const suggestions = [
+    {
+      name: "Ride",
+      imageSource: car,
+      hasBox: true,
+    },
+    {
+      name: "Travel",
+      imageSource: image2,
+      hasBox: false,
+    },
+    {
+      name: "Rentals",
+      imageSource: image3,
+      hasBox: true,
+    },
+    {
+      name: "Reserve",
+      imageSource: image4,
+      hasBox: false,
+    },
+  ];
+
+  const waysToSave = [
+    {
+      image: image5,
+      title: "Uber Moto rides",
+      desc: "Affordable motorcycle pickups",
+      screen: "Moto",
+    },
+    {
+      image: image6,
+      title: "Auto rides",
+      desc: "Upfront fares, doorstep pickups",
+      screen: "Auto",
+    },
+  ];
+
+  const moreWaysToUse = [
+    {
+      image: image11,
+      title: "Send a package",
+      desc: "On-demand delivery across town",
+      screen: "Package",
+    },
+    {
+      image: image12,
+      title: "Safety Toolkit",
+      desc: "On-trip help with safety issues",
+      screen: "Safety",
+    },
+  ];
+
+  const waysToPlan = [
+    {
+      image: image7,
+      title: "Reserve and relax",
+      desc: "Book up to 90 days ahead",
+      screen: "Reserve",
+    },
+    {
+      image: image9,
+      title: "Rentals",
+      desc: "Ride from 1 to 12 hours",
+      screen: "Rental",
+    },
+    {
+      image: image10,
+      title: "For XL groups",
+      desc: "Comfortable rides for your group",
+      screen: "UberXL",
+    },
+    {
+      image: image8,
+      title: "Travel Intercity",
+      desc: "Go outstation with ease",
+      screen: "Intercity",
+    },
+  ];
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
-      
+
       <View style={{ alignItems: "center" }}>
         <SearchBar />
       </View>
@@ -90,10 +172,14 @@ const Home = ({ navigation }) => {
       </View>
 
       <View style={styles.container2}>
-        <PromoBox hasBox={true} name="Ride" imageSource={car} />
-        <PromoBox hasBox={false} name="Travel" imageSource={image2} />
-        <PromoBox hasBox={true} name="Rentals" imageSource={image3} />
-        <PromoBox hasBox={false} name="Reserve" imageSource={image4} />
+        {suggestions.map((item, index) => (
+          <PromoBox
+            key={index}
+            hasBox={item.hasBox}
+            name={item.name}
+            imageSource={item.imageSource}
+          />
+        ))}
       </View>
 
       <View style={{ paddingTop: 20 }}>
@@ -105,25 +191,21 @@ const Home = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           style={{ paddingTop: 10, paddingLeft: 15 }}
         >
-          <Display
-            image={image5}
-            title="Uber Moto rides"
-            desc="Affordable motorcycle pickups"
-            screen="Moto"
-            navigation={navigation}
-          />
-          <Display
-            image={image6}
-            title="Auto rides"
-            desc="Upfront fares, doorstep pickups"
-            screen="Auto"
-            navigation={navigation}
-          />
+          {waysToSave.map((item, index) => (
+            <Display
+              key={index}
+              image={item.image}
+              title={item.title}
+              desc={item.desc}
+              screen={item.screen}
+              navigation={navigation}
+            />
+          ))}
         </ScrollView>
       </View>
 
       <View style={{ margin: 15, marginBottom: 10, marginTop: 30 }}>
-        <Carousel images={images} />
+        <Carousel images={image} />
       </View>
 
       <View style={{ paddingTop: 25 }}>
@@ -135,20 +217,16 @@ const Home = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           style={{ paddingTop: 10, paddingLeft: 15 }}
         >
-          <Display
-            image={image11}
-            title="Send a package"
-            desc="On-demand delivery across town"
-            screen="Package"
-            navigation={navigation}
-          />
-          <Display
-            image={image12}
-            title="Safety Toolkit"
-            desc="On-trip help with safety issues"
-            screen="Safety"
-            navigation={navigation}
-          />
+          {moreWaysToUse.map((item, index) => (
+            <Display
+              key={index}
+              image={item.image}
+              title={item.title}
+              desc={item.desc}
+              screen={item.screen}
+              navigation={navigation}
+            />
+          ))}
         </ScrollView>
       </View>
 
@@ -161,30 +239,16 @@ const Home = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           style={{ paddingTop: 10, paddingLeft: 15 }}
         >
-          <Display
-            image={image7}
-            title="Reserve and relax"
-            desc="Book up to 90 days ahead"
-            screen="Reserve"
-            navigation={navigation}
-          />
-          <Display
-            image={image9}
-            title="Rentals"
-            desc="Ride from 1 to 12 hours"
-          />
-          <Display
-            image={image10}
-            title="For XL groups"
-            desc="Comfortable rides for your group"
-            screen="UberXL"
-            navigation={navigation}
-          />
-          <Display
-            image={image8}
-            title="Travel Intercity"
-            desc="Go outstation with ease"
-          />
+          {waysToPlan.map((item, index) => (
+            <Display
+              key={index}
+              image={item.image}
+              title={item.title}
+              desc={item.desc}
+              screen={item.screen}
+              navigation={navigation}
+            />
+          ))}
         </ScrollView>
       </View>
 

@@ -10,6 +10,8 @@ import Auto from "../screens/Auto";
 import Safety from "../screens/Safety";
 import UberXL from "../screens/UberXL";
 import Moto from "../screens/Moto";
+import Rental from "../screens/Rental";
+import Intercity from "../screens/Intercity";
 
 const Stack = createStackNavigator();
 
@@ -43,6 +45,8 @@ function MainNavi() {
         component={Moto}
         options={{ ...TransitionPresets.ModalSlideFromBottomIOS }}
       />
+      <Stack.Screen name="Rental" component={Rental} />
+      <Stack.Screen name="Intercity" component={Intercity} />
     </Stack.Navigator>
   );
 }
