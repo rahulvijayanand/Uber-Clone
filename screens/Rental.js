@@ -19,7 +19,34 @@ const Rental = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={"#eff3fe"} barStyle={"dark-content"} />
-      <Image source={require("../assets/26.jpg")} style={styles.image} />
+
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Image source={require("../assets/26.jpg")} style={styles.image} />
+
+        <View style={styles.container2}>
+          <Image source={require("../assets/7-l.png")} style={styles.sale} />
+          <TextM style={{ alignSelf: "center", fontSize: 16 }}>
+            20% promotion applied
+          </TextM>
+        </View>
+
+        <View style={{ marginTop: 5, marginLeft: 22.5, marginRight: 20 }}>
+          <CustomComponent
+            imageSource={require("../assets/9-l.jpeg")}
+            text="Keep a car and driver for up to 12 hours"
+          />
+          <CustomComponent
+            imageSource={require("../assets/12-l.jpg")}
+            text="Ideal for business meetings, tourist travel and multiple stop trips"
+          />
+          <CustomComponent
+            imageSource={require("../assets/3-l.jpg")}
+            text="Book for now or reserve for later"
+          />
+        </View>
+
+        <View style={{ marginBottom: 150 }} />
+      </ScrollView>
 
       <TouchableOpacity
         activeOpacity={0.5}
@@ -38,31 +65,6 @@ const Rental = ({ navigation }) => {
         <TextM style={{ fontSize: 14 }}>Upcoming Trips</TextM>
       </TouchableOpacity>
 
-      <View style={styles.container2}>
-        <Image source={require("../assets/7-l.png")} style={styles.sale} />
-        <TextM style={{ alignSelf: "center", fontSize: 16 }}>
-          20% promotion applied
-        </TextM>
-      </View>
-
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={{ marginTop: 5, marginLeft: 22.5, marginRight: 20 }}
-      >
-        <CustomComponent
-          imageSource={require("../assets/9-l.jpeg")}
-          text="Keep a car and driver for up to 12 hours"
-        />
-        <CustomComponent
-          imageSource={require("../assets/12-l.jpg")}
-          text="Ideal for business meetings, tourist travel and multiple stop trips"
-        />
-        <CustomComponent
-          imageSource={require("../assets/3-l.jpg")}
-          text="Book for now or reserve for later"
-        />
-      </ScrollView>
-
       <View style={styles.bottomButtonsContainer}>
         <Divider
           style={{
@@ -78,6 +80,7 @@ const Rental = ({ navigation }) => {
             justifyContent: "space-between",
             marginBottom: 25,
             marginLeft: 15,
+            backgroundColor: "white",
           }}
         >
           <View>
@@ -160,6 +163,7 @@ const styles = StyleSheet.create({
     bottom: 20,
     left: 0,
     right: 0,
+    backgroundColor: "white",
   },
   sendButton: {
     backgroundColor: "#000",

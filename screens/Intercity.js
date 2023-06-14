@@ -18,7 +18,26 @@ const Intercity = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={"#addec9"} barStyle={"dark-content"} />
-      <Image source={require("../assets/25.jpg")} style={styles.image} />
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Image source={require("../assets/25.jpg")} style={styles.image} />
+
+        <View style={{ marginTop: 10, marginLeft: 22.5, marginRight: 20 }}>
+          <CustomComponent
+            imageSource={require("../assets/13-l.jpg")}
+            text="For outstation trips to Bangalore, Puducherry, Tirupati, Vellore and more"
+          />
+          <CustomComponent
+            imageSource={require("../assets/3-l.jpg")}
+            text="Book for now or reserve for later"
+          />
+          <CustomComponent
+            imageSource={require("../assets/11-l.jpg")}
+            text="Priority chat support post trip"
+          />
+        </View>
+
+        <View style={{marginBottom:90}}/>
+      </ScrollView>
 
       <TouchableOpacity
         activeOpacity={0.5}
@@ -35,21 +54,6 @@ const Intercity = ({ navigation }) => {
       >
         <TextM style={{ fontSize: 13 }}>My activity</TextM>
       </TouchableOpacity>
-
-      <View style={{ marginTop: 10, marginLeft: 22.5, marginRight: 20 }}>
-        <CustomComponent
-          imageSource={require("../assets/13-l.jpg")}
-          text="For outstation trips to Bangalore, Puducherry, Tirupati, Vellore and more"
-        />
-        <CustomComponent
-          imageSource={require("../assets/3-l.jpg")}
-          text="Book for now or reserve for later"
-        />
-        <CustomComponent
-          imageSource={require("../assets/11-l.jpg")}
-          text="Priority chat support post trip"
-        />
-      </View>
 
       <View style={styles.bottomButtonsContainer}>
         <TouchableOpacity activeOpacity={0.5} style={styles.sendButton}>

@@ -5,6 +5,7 @@ import {
   StatusBar,
   Dimensions,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import TextB from "../fonts/TextBold";
@@ -31,7 +32,10 @@ const Reserve = ({ navigation }) => {
         <TextB style={styles.text}>Reserve</TextB>
       </View>
 
-      <View style={{ marginTop: 90, marginLeft: 25, marginRight: 25 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ marginTop: 90, marginLeft: 25, marginRight: 25 }}
+      >
         <CustomComponent
           imageSource={require("../assets/8-l.jpeg")}
           text="Choose your exact pickup time up to 90 days in advance"
@@ -46,7 +50,8 @@ const Reserve = ({ navigation }) => {
           imageSource={require("../assets/10-l.jpeg")}
           text="Cancel at no charge up to 60 minutes in advance"
         />
-      </View>
+        <View style={{marginBottom:100}}/>
+      </ScrollView>
 
       <View style={styles.bottomButtonsContainer}>
         <TouchableOpacity activeOpacity={0.5} style={styles.sendButton}>

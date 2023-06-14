@@ -17,7 +17,7 @@ import { Ionicons } from "@expo/vector-icons";
 const Safety = ({ navigation }) => {
   return (
     <View>
-      <ScrollView style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         <StatusBar backgroundColor={"#000"} barStyle={"light-content"} />
 
         <Image source={require("../assets/10.jpeg")} style={styles.image} />
@@ -30,14 +30,15 @@ const Safety = ({ navigation }) => {
             safety features.
           </Text>
 
-          <Text style={{ fontSize: 18, marginTop: 40, lineHeight: 25 }}>
+          <Text style={{ fontSize: 18, marginTop: 20, lineHeight: 25 }}>
             Wherever you are, you can always contact emergency service and
             report safety concern directly through the app. You can also add one
             or more loved ones as trusted contacts and receive automatic prompts
             to share your trip information with them in real time.
           </Text>
         </View>
-        
+
+        <View style={{ marginBottom: 70 }} />
       </ScrollView>
 
       <View style={styles.bottomButtonsContainer}>
