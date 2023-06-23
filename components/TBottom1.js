@@ -3,8 +3,9 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import { BottomSheet } from "react-native-btr";
 import TextM from "../fonts/TextMedium";
 import { Divider } from "react-native-paper";
+import { Ionicons } from "@expo/vector-icons";
 
-const Show = ({ navigation }) => {
+const TB1 = ({ navigation }) => {
   const [visible, setVisible] = useState(false);
   const [selectedOption, setSelectedOption] = useState("All");
 
@@ -22,24 +23,16 @@ const Show = ({ navigation }) => {
         onPress={toggleBottomNavigationView}
         activeOpacity={0.5}
         style={{
-          alignSelf: "center",
-          height: 32,
-          width: 32,
-          borderRadius: 20,
-          backgroundColor: "#eee",
+
+          height: 45,
+          width: 45,
+          borderRadius: 30,
+          backgroundColor: "#000",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <Image
-          source={require("../assets/filter.jpg")}
-          style={{
-            resizeMode: "contain",
-            height: 15,
-            width: 15,
-            alignSelf: "center",
-          }}
-        />
+        <Ionicons name="add" size={40} color="white" />
       </TouchableOpacity>
 
       <BottomSheet
@@ -88,7 +81,6 @@ const Show = ({ navigation }) => {
                 style={[
                   styles.optionButton,
                   selectedOption === "All" && styles.activeOptionButton,
-                  {marginLeft:15},
                 ]}
                 onPress={() => handleOptionSelect("All")}
               >
@@ -137,24 +129,6 @@ const Show = ({ navigation }) => {
                   Eats
                 </TextM>
               </TouchableOpacity>
-
-              <TouchableOpacity
-                activeOpacity={0.5}
-                style={[
-                  styles.optionButton,
-                  selectedOption === "2-Wheels" && styles.activeOptionButton,
-                ]}
-                onPress={() => handleOptionSelect("2-Wheels")}
-              >
-                <TextM
-                  style={[
-                    styles.optionText,
-                    selectedOption === "2-Wheels" && styles.activeOptionText,
-                  ]}
-                >
-                  2-Wheels
-                </TextM>
-              </TouchableOpacity>
             </View>
 
             <TouchableOpacity
@@ -184,9 +158,9 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     paddingVertical: 6,
-    paddingHorizontal: 13,
+    paddingHorizontal: 15,
     backgroundColor: "#eee",
-    marginLeft: 10,
+    marginLeft: 15,
     borderRadius: 20,
     marginTop: 5,
   },
@@ -202,4 +176,4 @@ const styles = {
   },
 };
 
-export default React.memo(Show);
+export default React.memo(TB1);

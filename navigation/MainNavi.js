@@ -14,6 +14,7 @@ import Rental from "../screens/Rental";
 import Intercity from "../screens/Intercity";
 import Premier from "../screens/Premier";
 import Schedule from "../screens/Schedule";
+import TravelPage from "../screens/Travel";
 
 const Stack = createStackNavigator();
 
@@ -55,6 +56,7 @@ function MainNavi() {
       <Stack.Screen name="Rental" component={Rental} />
       <Stack.Screen name="Intercity" component={Intercity} />
       <Stack.Screen name="Schedule" component={Schedule} />
+      <Stack.Screen name="Travel" component={TravelPage} />
     </Stack.Navigator>
   );
 }

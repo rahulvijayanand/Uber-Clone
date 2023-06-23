@@ -94,26 +94,20 @@ const Home = ({ navigation }) => {
       screen: "Package",
     },
     {
-      image: image12,
-      title: "Safety Toolkit",
-      desc: "On-trip help with safety issues",
-      screen: "Safety",
-    },
-    {
       image: image13,
       title: "Premier rides",
       desc: "Top-rated drivers, newer cars",
       screen: "Premier",
     },
+    {
+      image: image12,
+      title: "Safety Toolkit",
+      desc: "On-trip help with safety issues",
+      screen: "Safety",
+    },
   ];
 
   const waysToPlan = [
-    {
-      image: image7,
-      title: "Reserve and relax",
-      desc: "Book up to 90 days ahead",
-      screen: "Reserve",
-    },
     {
       image: image9,
       title: "Rentals",
@@ -125,6 +119,12 @@ const Home = ({ navigation }) => {
       title: "For XL groups",
       desc: "Comfortable rides for your group",
       screen: "UberXL",
+    },
+    {
+      image: image7,
+      title: "Reserve and relax",
+      desc: "Book up to 90 days ahead",
+      screen: "Reserve",
     },
     {
       image: image8,
@@ -139,7 +139,7 @@ const Home = ({ navigation }) => {
       <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
 
       <View style={{ alignItems: "center" }}>
-        <SearchBar navigation={navigation}/>
+        <SearchBar navigation={navigation} />
       </View>
 
       <View style={{ paddingTop: 25 }}>
@@ -195,16 +195,16 @@ const Home = ({ navigation }) => {
         ))}
       </View>
 
-      <View style={{ paddingTop: 20 }}>
+      <View style={{ paddingTop: 25 }}>
         <TextB style={{ fontSize: 20, marginLeft: 15 }}>
-          Ways to save with Uber
+          More ways to use Uber
         </TextB>
         <ScrollView
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           style={{ paddingTop: 10, paddingLeft: 15 }}
         >
-          {waysToSave.map((item, index) => (
+          {moreWaysToUse.map((item, index) => (
             <Display
               key={index}
               image={item.image}
@@ -221,16 +221,16 @@ const Home = ({ navigation }) => {
         <Carousel images={image} />
       </View>
 
-      <View style={{ paddingTop: 25 }}>
+      <View style={{ paddingTop: 20 }}>
         <TextB style={{ fontSize: 20, marginLeft: 15 }}>
-          More ways to use Uber
+          Ways to save with Uber
         </TextB>
         <ScrollView
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           style={{ paddingTop: 10, paddingLeft: 15 }}
         >
-          {moreWaysToUse.map((item, index) => (
+          {waysToSave.map((item, index) => (
             <Display
               key={index}
               image={item.image}

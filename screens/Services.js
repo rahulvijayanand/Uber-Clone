@@ -24,7 +24,13 @@ const Services = ({ navigation }) => {
 
       <View style={styles.container2}>
         <PromoBoxL hasBox={true} name="Ride" imageSource={car} />
-        <PromoBoxL hasBox={false} name="Travel" imageSource={image2} />
+        <PromoBoxL
+          hasBox={false}
+          name="Travel"
+          imageSource={image2}
+          navigation={navigation}
+          screen="Travel"
+        />
       </View>
 
       <View style={[styles.container2, { marginTop: 5 }]}>
