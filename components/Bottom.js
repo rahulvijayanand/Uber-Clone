@@ -195,7 +195,7 @@ const styles = {
   },
   optionText: {
     color: "#000",
-    fontSize: 16,
+    fontSize: 15,
   },
   activeOptionText: {
     color: "#fff",

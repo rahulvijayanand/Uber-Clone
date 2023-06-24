@@ -23,16 +23,20 @@ const TB1 = ({ navigation }) => {
         onPress={toggleBottomNavigationView}
         activeOpacity={0.5}
         style={{
-
-          height: 45,
-          width: 45,
+          height: 55,
+          width: 55,
           borderRadius: 30,
           backgroundColor: "#000",
           alignItems: "center",
           justifyContent: "center",
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 9 },
+          shadowOpacity: 0.8,
+          shadowRadius: 4,
+          elevation: 15,
         }}
       >
-        <Ionicons name="add" size={40} color="white" />
+        <Ionicons name="add" size={35} color="white" />
       </TouchableOpacity>
 
       <BottomSheet

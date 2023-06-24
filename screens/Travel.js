@@ -1,15 +1,16 @@
 import React from "react";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Text from "../fonts/Text";
+import TextM from "../fonts/TextMedium";
 import TB1 from "../components/TBottom1";
 
-const TravelPage = () => {
+const TravelPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={{ flexDirection: "row" }}>
-          <TouchableOpacity onPress={() => console.log("Go back")}>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
             <Ionicons name="arrow-back" size={29} color="black" />
           </TouchableOpacity>
           <Text style={styles.title}>Uber Travel</Text>
@@ -21,7 +22,33 @@ const TravelPage = () => {
           <Ionicons name="ellipsis-horizontal-sharp" size={18} color="black" />
         </TouchableOpacity>
       </View>
-      <TB1 />
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 230,
+        }}
+      >
+        <Image
+          source={require("../assets/travel.jpg")}
+          style={{ height: 140, width: 130, resizeMode: "contain" }}
+        />
+        <TextM style={{ fontSize: 18, marginTop: 20 }}>No upcoming trips</TextM>
+        <Text
+          style={{
+            fontSize: 16,
+            marginTop: 10,
+            width: 250,
+            textAlign: "center",
+            color: "gray",
+          }}
+        >
+          We'll notify you when we find any upcoming trips.
+        </Text>
+      </View>
+      <View style={{ position: "absolute", bottom: 50, right: 25 }}>
+        <TB1 />
+      </View>
     </View>
   );
 };
@@ -29,6 +56,7 @@ const TravelPage = () => {
 const styles = StyleSheet.create({
   container: {
     height: "100%",
+    backgroundColor: "#fff",
   },
   header: {
     flexDirection: "row",
