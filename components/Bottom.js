@@ -6,14 +6,19 @@ import { Divider } from "react-native-paper";
 
 const Show = ({ navigation }) => {
   const [visible, setVisible] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("All");
+  const [selectedOption1, setSelectedOption1] = useState("All");
+  const [selectedOption2, setSelectedOption2] = useState("Personal");
 
   const toggleBottomNavigationView = () => {
     setVisible((prevVisible) => !prevVisible);
   };
 
-  const handleOptionSelect = (option) => {
-    setSelectedOption(option);
+  const handleOptionSelect1 = (option) => {
+    setSelectedOption1(option);
+  };
+
+  const handleOptionSelect2 = (option) => {
+    setSelectedOption2(option);
   };
 
   return (
@@ -51,7 +56,7 @@ const Show = ({ navigation }) => {
           style={{
             backgroundColor: "#fff",
             width: "100%",
-            height: "32.5%",
+            height: "43.5%",
             borderTopLeftRadius: 15,
             borderTopRightRadius: 15,
           }}
@@ -63,7 +68,7 @@ const Show = ({ navigation }) => {
           >
             <View
               style={{
-                height: "25%",
+                height: "17.5%",
                 justifyContent: "center",
                 alignItems: "center",
               }}
@@ -79,6 +84,49 @@ const Show = ({ navigation }) => {
             />
 
             <TextM style={{ marginLeft: 15, marginTop: 30, fontSize: 18 }}>
+              Profiles
+            </TextM>
+
+            <View style={{ flexDirection: "row" }}>
+              <TouchableOpacity
+                activeOpacity={0.5}
+                style={[
+                  styles.optionButton,
+                  selectedOption2 === "Personal" && styles.activeOptionButton,
+                  { marginLeft: 15 },
+                ]}
+                onPress={() => handleOptionSelect2("Personal")}
+              >
+                <TextM
+                  style={[
+                    styles.optionText,
+                    selectedOption2 === "Personal" && styles.activeOptionText,
+                  ]}
+                >
+                  Personal
+                </TextM>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                activeOpacity={0.5}
+                style={[
+                  styles.optionButton,
+                  selectedOption2 === "Business" && styles.activeOptionButton,
+                ]}
+                onPress={() => handleOptionSelect2("Business")}
+              >
+                <TextM
+                  style={[
+                    styles.optionText,
+                    selectedOption2 === "Business" && styles.activeOptionText,
+                  ]}
+                >
+                  Rides
+                </TextM>
+              </TouchableOpacity>
+            </View>
+
+            <TextM style={{ marginLeft: 15, marginTop: 30, fontSize: 18 }}>
               Services
             </TextM>
 
@@ -87,15 +135,15 @@ const Show = ({ navigation }) => {
                 activeOpacity={0.5}
                 style={[
                   styles.optionButton,
-                  selectedOption === "All" && styles.activeOptionButton,
-                  {marginLeft:15},
+                  selectedOption1 === "All" && styles.activeOptionButton,
+                  { marginLeft: 15 },
                 ]}
-                onPress={() => handleOptionSelect("All")}
+                onPress={() => handleOptionSelect1("All")}
               >
                 <TextM
                   style={[
                     styles.optionText,
-                    selectedOption === "All" && styles.activeOptionText,
+                    selectedOption1 === "All" && styles.activeOptionText,
                   ]}
                 >
                   All
@@ -106,14 +154,14 @@ const Show = ({ navigation }) => {
                 activeOpacity={0.5}
                 style={[
                   styles.optionButton,
-                  selectedOption === "Rides" && styles.activeOptionButton,
+                  selectedOption1 === "Rides" && styles.activeOptionButton,
                 ]}
-                onPress={() => handleOptionSelect("Rides")}
+                onPress={() => handleOptionSelect1("Rides")}
               >
                 <TextM
                   style={[
                     styles.optionText,
-                    selectedOption === "Rides" && styles.activeOptionText,
+                    selectedOption1 === "Rides" && styles.activeOptionText,
                   ]}
                 >
                   Rides
@@ -124,14 +172,14 @@ const Show = ({ navigation }) => {
                 activeOpacity={0.5}
                 style={[
                   styles.optionButton,
-                  selectedOption === "Eats" && styles.activeOptionButton,
+                  selectedOption1 === "Eats" && styles.activeOptionButton,
                 ]}
-                onPress={() => handleOptionSelect("Eats")}
+                onPress={() => handleOptionSelect1("Eats")}
               >
                 <TextM
                   style={[
                     styles.optionText,
-                    selectedOption === "Eats" && styles.activeOptionText,
+                    selectedOption1 === "Eats" && styles.activeOptionText,
                   ]}
                 >
                   Eats
@@ -142,14 +190,14 @@ const Show = ({ navigation }) => {
                 activeOpacity={0.5}
                 style={[
                   styles.optionButton,
-                  selectedOption === "2-Wheels" && styles.activeOptionButton,
+                  selectedOption1 === "2-Wheels" && styles.activeOptionButton,
                 ]}
-                onPress={() => handleOptionSelect("2-Wheels")}
+                onPress={() => handleOptionSelect1("2-Wheels")}
               >
                 <TextM
                   style={[
                     styles.optionText,
-                    selectedOption === "2-Wheels" && styles.activeOptionText,
+                    selectedOption1 === "2-Wheels" && styles.activeOptionText,
                   ]}
                 >
                   2-Wheels

@@ -26,6 +26,7 @@ import image10 from "../assets/8.jpeg";
 import image11 from "../assets/9.jpg";
 import image12 from "../assets/10.jpeg";
 import image13 from "../assets/13.jpg";
+import image14 from "../assets/2.jpg";
 import Carousel from "../components/Carousel";
 import * as NavigationBar from "expo-navigation-bar";
 
@@ -73,6 +74,12 @@ const Home = ({ navigation }) => {
 
   const waysToSave = [
     {
+      image: image14,
+      title: "Add a stop or 5",
+      desc: "Book up to 90 days ahead",
+      screen: "AddStop",
+    },
+    {
       image: image5,
       title: "Uber Moto rides",
       desc: "Affordable motorcycle pickups",
@@ -88,6 +95,12 @@ const Home = ({ navigation }) => {
 
   const moreWaysToUse = [
     {
+      image: image12,
+      title: "Safety Toolkit",
+      desc: "On-trip help with safety issues",
+      screen: "Safety",
+    },
+    {
       image: image11,
       title: "Send a package",
       desc: "On-demand delivery across town",
@@ -99,27 +112,9 @@ const Home = ({ navigation }) => {
       desc: "Top-rated drivers, newer cars",
       screen: "Premier",
     },
-    {
-      image: image12,
-      title: "Safety Toolkit",
-      desc: "On-trip help with safety issues",
-      screen: "Safety",
-    },
   ];
 
   const waysToPlan = [
-    {
-      image: image9,
-      title: "Rentals",
-      desc: "Ride from 1 to 12 hours",
-      screen: "Rental",
-    },
-    {
-      image: image10,
-      title: "For XL groups",
-      desc: "Comfortable rides for your group",
-      screen: "UberXL",
-    },
     {
       image: image7,
       title: "Reserve and relax",
@@ -131,6 +126,18 @@ const Home = ({ navigation }) => {
       title: "Travel Intercity",
       desc: "Go outstation with ease",
       screen: "Intercity",
+    },
+    {
+      image: image10,
+      title: "For XL groups",
+      desc: "Comfortable rides for your group",
+      screen: "UberXL",
+    },
+    {
+      image: image9,
+      title: "Rentals",
+      desc: "Ride from 1 to 12 hours",
+      screen: "Rental",
     },
   ];
 
@@ -195,6 +202,10 @@ const Home = ({ navigation }) => {
         ))}
       </View>
 
+      <View style={{ margin: 15, marginBottom: 10, marginTop: 30 }}>
+        <Carousel images={image} />
+      </View>
+
       <View style={{ paddingTop: 25 }}>
         <TextB style={{ fontSize: 20, marginLeft: 15 }}>
           More ways to use Uber
@@ -217,20 +228,16 @@ const Home = ({ navigation }) => {
         </ScrollView>
       </View>
 
-      <View style={{ margin: 15, marginBottom: 10, marginTop: 30 }}>
-        <Carousel images={image} />
-      </View>
-
-      <View style={{ paddingTop: 20 }}>
+      <View style={{ paddingTop: 25 }}>
         <TextB style={{ fontSize: 20, marginLeft: 15 }}>
-          Ways to save with Uber
+          Ways to plan with Uber
         </TextB>
         <ScrollView
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           style={{ paddingTop: 10, paddingLeft: 15 }}
         >
-          {waysToSave.map((item, index) => (
+          {waysToPlan.map((item, index) => (
             <Display
               key={index}
               image={item.image}
@@ -243,16 +250,16 @@ const Home = ({ navigation }) => {
         </ScrollView>
       </View>
 
-      <View style={{ paddingTop: 25 }}>
+      <View style={{ paddingTop: 20 }}>
         <TextB style={{ fontSize: 20, marginLeft: 15 }}>
-          Ways to plan with Uber
+          Ways to save with Uber
         </TextB>
         <ScrollView
           horizontal={true}
           showsHorizontalScrollIndicator={false}
           style={{ paddingTop: 10, paddingLeft: 15 }}
         >
-          {waysToPlan.map((item, index) => (
+          {waysToSave.map((item, index) => (
             <Display
               key={index}
               image={item.image}

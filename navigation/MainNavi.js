@@ -15,6 +15,7 @@ import Intercity from "../screens/Intercity";
 import Premier from "../screens/Premier";
 import Schedule from "../screens/Schedule";
 import TravelPage from "../screens/Travel";
+import AddStop from "../screens/AddStop";
 
 const Stack = createStackNavigator();
 
@@ -51,6 +52,11 @@ function MainNavi() {
       <Stack.Screen
         name="Premier"
         component={Premier}
+        options={{ ...TransitionPresets.ModalSlideFromBottomIOS }}
+      />
+      <Stack.Screen
+        name="AddStop"
+        component={AddStop}
         options={{ ...TransitionPresets.ModalSlideFromBottomIOS }}
       />
       <Stack.Screen name="Rental" component={Rental} />
